@@ -1,0 +1,20 @@
+<div class="wrap">
+  <div class="story">
+    <div *ngIf="rank" class="rank">{{ rank }}.</div>
+    <div class="title" (click)="onOpenLink(story.url)">
+      {{ story.title }}
+      <span *ngIf="story.domainName" class="source"
+        >(<span class="link">{{ story.domainName }}</span
+        >)</span
+      >
+    </div>
+  </div>
+  <div class="description" [ngClass]="{ ranked: rank }">
+    {{ story.score }} points by {{ story.by }}
+    <div class="time" [routerLink]="['/comments', story.id]">{{ story.formattedTime }} ago</div>
+    <span *ngIf="story.kids">|</span>
+    <div *ngIf="story.kids" class="comments" [routerLink]="['/comments', story.id]">
+      {{ story.kids.length }} comments
+    </div>
+  </div>
+</div>

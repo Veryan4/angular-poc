@@ -1,0 +1,5 @@
+<div class="list">
+  <div *ngFor="let story of newsStories; index as i" class="item">
+    <app-story [story]="story" [rank]="i + 1"></app-story>
+  </div>
+</div>

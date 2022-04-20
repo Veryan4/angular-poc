@@ -1,0 +1,13 @@
+<div class="story">
+  <app-story [story]="story"></app-story>
+</div>
+
+<div class="list">
+  <div *ngFor="let comment of comments" class="comment">
+    <div class="description">
+      {{ comment.by }}
+      <div class="time">{{ comment.formattedTime }} ago</div>
+    </div>
+    <div class="text" [innerHTML]="comment.text | safe"></div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.body {
+  min-width: 796px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.route {
+  background-color: #f6f6ef;
+  padding: 10px 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 750px) {
+  .body {
+    min-width: unset;
+  }
+  .wrap {
+    width: 100%;
+  }
+}
